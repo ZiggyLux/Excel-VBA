@@ -1,0 +1,89 @@
+﻿DOCUMENTATION DE LA LIBRAIRIE EXCEL VBA
+Package : common
+
+================================================================================
+LISTE DES MODULES  ET DES COMPOSANTS
+
+"doc/Excel VBA.Common.doc.txt"
+	Ce document
+
+"Common.excelMacro.bas" --------------------------------------------------------
+	Ce module contient les fonctionnalités les plus générales et partageables
+
+"EnteteTable.excelMacro.bas" ---------------------------------------------------
+	Ce module permet de mettre en forme une en-tête de table
+
+"TypeCellule.excelMacro.bas" ---------------------------------------------------
+	Ce module illustre comment détecter le type d'une cellule
+	
+"RangeDetection.excelMacro.bas" ------------------------------------------------
+	Ce module permet la détermination de 'zone englobante' à partir d'une cellule
+	d'origine
+	
+================================================================================
+"Common.excelMacro.bas":
+------------------------
+
+Sub updateScreen(): ------------------------------------------------------------
+    Permet d'activer la mise à jour en temps réel de l'écran en cours
+    d'exécution. Cette fonction sert à désactiver la suivante.
+
+Sub freezeScreen(): ------------------------------------------------------------
+    Permet d'interompre la mise à jour en temps réel de l'écran en cours
+    d'exécution
+
+Function getFormula(r As Range) As String: -------------------------------------
+    Affiche la formule associée à une cellule. Voir un exemple avec
+    Common_001.figure.png
+
+================================================================================
+"TableColumnNames.excelMacro.bas":
+----------------------------------
+
+Sub formatTableColumnNames(): --------------------------------------------------
+    Permet de mettre en forme rapidement une en-tête de table ou de liste. Voir
+    un exemple avec TableColumnNames_001.figure.png
+
+================================================================================
+"CellValueType.excelMacro.bas":
+-------------------------------
+
+Public Function getCellValueType(v As Variant) As Integer: ---------------------
+		Cette fonction est simplement une encapsulation de la fonction VarType().
+		Voir un exemple avec CellValueType_001.figure.png
+
+Public Function getCellValueTypeAsText(v As Variant) As String: ----------------
+    Cette fonction est simplement une encapsulation de la fonction VarType()
+    mais retourne le type sous forme de chaîne de caractères (exemple "vbError
+    (10)"). Voir un exemple avec CellValueType_001.figure.png
+
+================================================================================
+"RangeDetection.excelMacro.bas":
+
+Public Function walkExtendingRange(r As Range, iMoveRow As Integer, iMoveCol
+  As Integer) As Range ---------------------------------------------------------
+  	Cette fonction permet de connaître la plage englobante à partir d'une 
+  	cellule et à partir de deux incréments de ligne et de colonnes. Les trois
+  	valeurs utilisées sont normalement:
+  		-1 pour se déplacer vers les lignes/colonnes décroisantes
+  		0 pour ne pas se déplacer suivant les lignes/colonnes
+  		1 pour se déplacer vers les lignes/colonnes croissantes
+ 
+Public Function getRowCntFromCell(rngStartCell As Range, Optional iNS As Integer 
+	= 1) As Integer --------------------------------------------------------------
+		Cette fonction calcule le nombre de lignes de la zone englobante
+  	Pour un aperçu d'utilisation, voir RangeDetection_001.figure.png
+
+Public Function getColCntFromCell(rngStartCell As Range, Optional iNS As Integer 
+	= 1) As Integer --------------------------------------------------------------
+		Cette fonction calcule le nombre de colonnes de la zone englobante
+  	Pour un aperçu d'utilisation, voir RangeDetection_001.figure.png
+
+Public Sub DetectRangeActiveCell_SE() ------------------------------------------
+ 		Cette procédure est un exemple d'utilisation de la fonction précédente. Elle
+ 		détecte la zone englobante à partir de la cellule active en allant vers le
+ 		Sud-Est.
+  	Pour un aperçu d'utilisation, voir RangeDetection_001.figure.png
+
+================================================================================
+Fin

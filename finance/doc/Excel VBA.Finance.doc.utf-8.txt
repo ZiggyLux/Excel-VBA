@@ -1,0 +1,40 @@
+﻿DOCUMENTATION DE LA LIBRAIRIE EXCEL VBA
+Package : finance
+
+================================================================================
+LISTE DES MODULES ET DES COMPOSANTS
+
+"doc/Excel VBA.Finance.doc.utf-8.txt"
+	Ce document
+
+"CurrencyTable.excelMacro.bas" -------------------------------------------------
+	Ce module permet de recherche les propriétés des devises par le biais d'une
+	table externe.	
+
+================================================================================
+"CurrencyTable.excelMacro.bas":
+-------------------------------
+
+Public Function getCurrPropFromNum(iCurr As Integer, Optional iCol As Integer = 
+	TCOL_CUR_ALPHA) As Variant ---------------------------------------------------
+    Cette fonction permet de retrouver une propriété d'une monnaie sur base de
+    son code numérique. Les propriétés sont identifiées par leur numéro de
+    colonne:
+			TCOL_CUR_NUM			...........	le code numérique
+			TCOL_CUR_ALPHA		...........	le code alphabétique
+			TCOL_CUR_DESCR		...........	la désignation
+			TCOL_CUR_SBUNT		........... le code de sous-unité
+			TCOL_CUR_DELIV		...........	l'indicateur de livrabilité internationale
+			TCOL_CUR_REM			...........	une zone de commentaire
+
+Public Function getCurrNumFromAlpha(strCurr As String) As Integer --------------
+		Cette fonction permet de retrouver l'identifiant numérique d'une monnaie en
+		fonction de son identifiant alphabétique.
+	
+Public Function getCurrPropFromAlpha(strCurr As String, Optional iCol As
+  Integer = TCOL_CUR_NUM) As Variant -------------------------------------------
+		Cette fonction est similaire à getCurrPropFromNum mais part de l'identifiant
+		alphabétique de la monnaie.
+
+================================================================================
+Fin

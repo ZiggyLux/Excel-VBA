@@ -1,0 +1,15 @@
+﻿"TO DO LIST" DE LA LIBRAIRIE EXCEL VBA
+
+================================================================================
+02/08/2013 23:58		Excel VBA
+	Structurer par packages. Par exemple, faire un package ETL, un autre Olympic,
+	un autre Common, etc. Prévoir un système de dépendances et de version d'un
+	package à l'autre. Prévoir plus de deux niveaux et penser aux possibilités de
+	Git.
+
+01/08/2013 21:49		CurrencyTable
+	Rendre la table des monnaies interne à partir d'une ressource appropriée. La
+	ressource doit être facilement traçable par un gestionnaire de version. Ce 
+	peut être une ressource XML ou une table interne initialisée par programme.
+================================================================================
+Fin

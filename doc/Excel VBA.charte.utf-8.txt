@@ -1,0 +1,17 @@
+CHARTE EXCEL VBA
+
+Commentaires:
+		Les commentaires sont en français.
+
+Nom de fonctions et procédures:
+    Doivent être en anglais
+    Les noms de fonctions doivent commencer par un verbe en minuscule.
+    Les noms de procédures doivent commencer par un verbe en majuscule.
+    
+    Les mots qui suivent doivent commencer par une majuscule. Par exemple,
+    "updateScreen".
+		
+		Toute fonction ou procédure publique doit être dans la documentation.
+
+
+		

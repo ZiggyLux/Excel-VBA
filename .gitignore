@@ -1,0 +1,6 @@
+# Ignore files
+#
+# Backup files from UltraEdit
+*.bak
+# Ignore files in the temp/ directories
+temp/

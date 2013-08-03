@@ -1,0 +1,16 @@
+JOURNAL EXCEL VBA
+
+03/08/2013 08:54
+		Restructuration de l'arborescence de Excel VBA pour organiser les composants
+		en packages. Un seul dépot Git est utilisé.
+
+01/08/2013 21:46
+    Première version de CurrencyTable. La table doit être préparée séparément.
+    Ce qui veut dire qu'elle a une structure définie mais ne fait pas partie de
+    la librairie.
+
+31/07/2013 00:55
+    Mise en place de l'arborescence du projet. Filtrage dans .gitignore.
+    Documents clé comme l'embryon de documentation, la charte et le journal.
+
+ 
