@@ -13,6 +13,9 @@ LISTE DES MODULES  ET DES COMPOSANTS
 "EnteteTable.excelMacro.bas" ---------------------------------------------------
 	Ce module permet de mettre en forme une en-tête de table
 
+"ErrorHandling.excelMacro.bas" -------------------------------------------------
+  Ce module fournit les outils à la bonne gestion des erreurs sous Excel
+
 "TypeCellule.excelMacro.bas" ---------------------------------------------------
 	Ce module illustre comment détecter le type d'une cellule
 	
@@ -59,6 +62,7 @@ Public Function getCellValueTypeAsText(v As Variant) As String: ----------------
 
 ================================================================================
 "RangeDetection.excelMacro.bas":
+-------------------------------
 
 Public Function walkExtendingRange(r As Range, iMoveRow As Integer, iMoveCol
   As Integer) As Range ---------------------------------------------------------
@@ -85,5 +89,12 @@ Public Sub DetectRangeActiveCell_SE() ------------------------------------------
  		Sud-Est.
   	Pour un aperçu d'utilisation, voir RangeDetection_001.figure.png
 
+================================================================================
+"ErrorHandling.excelMacro.bas":
+-------------------------------
+
+Public returnExcelError(str As String) as Variant ------------------------------
+    Cette fonction montre comment retourner une erreur Excel dans un Variant
+    Pour un aperçu d'utilisation, voir ErrorHandling_001.figure.png
 ================================================================================
 Fin
