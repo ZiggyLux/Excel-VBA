@@ -10,6 +10,9 @@ LISTE DES MODULES  ET DES COMPOSANTS
 "Common.excelMacro.bas" --------------------------------------------------------
 	Ce module contient les fonctionnalités les plus générales et partageables
 
+"DateHandling.excelMacro.bas" -------------------------------------------------
+  Ce module fournit quelques outils pour la gestion des dates sous Excel
+
 "EnteteTable.excelMacro.bas" ---------------------------------------------------
 	Ce module permet de mettre en forme une en-tête de table
 
@@ -60,6 +63,49 @@ Public Function getCellValueTypeAsText(v As Variant) As String: ----------------
     mais retourne le type sous forme de chaîne de caractères (exemple "vbError
     (10)"). Voir un exemple avec CellValueType_001.figure.png
 
+================================================================================
+"DateHandling.excelMacro.bas":
+----------------------------------
+
+Public getDaysOfWeek1char(Optional strLng As String) ---------------------------
+    Cette fonction retourne le tableau en colonnes des initiales des jours de la 
+    semaine en commençant par le dimanche. La langue-paramètre peut être "fr" ou 
+    "en".
+    Pour un aperçu d'utilisation, voir DateHandling_001.figure.png
+		Une version transposée en lignes peut être obtenue par la ws-fonction 
+		"TRANSPOSE(..)".
+    
+Public getDaysOfWeek3chars(Optional strLng As String) --------------------------
+    Cette fonction retourne le tableau en colonnes des abrégés des jours de la 
+    semaine en commençant par le dimanche. La langue-paramètre peut être "fr" ou
+    "en".
+    Pour un aperçu d'utilisation, voir DateHandling_001.figure.png
+		Une version transposée en lignes peut être obtenue par la ws-fonction 
+		"TRANSPOSE(..)".
+    
+Public getDaysOfWeekAllchars(Optional strLng As String) ------------------------
+    Cette fonction retourne le tableau en colonnes des noms des jours de la 
+    semaine en commençant par le dimanche. La langue-paramètre peut être "fr" ou
+    "en".
+    Pour un aperçu d'utilisation, voir DateHandling_001.figure.png
+		Une version transposée en lignes peut être obtenue par la ws-fonction 
+		"TRANSPOSE(..)".
+
+Public getDayOfWeek1char(dt As Date, Optional strLng As String) ----------------
+		Cette fonction retourne l'initiale du jour de la semaine d'une date. La 
+		langue-paramètre peut être "fr" ou "en".
+    Pour un aperçu d'utilisation, voir DateHandling_002.figure.png
+        
+Public getDayOfWeek3chars(dt As Date, Optional strLng As String) ----------------
+		Cette fonction retourne l'abrégé du jour de la semaine d'une date. La 
+		langue-paramètre peut être "fr" ou "en".
+    Pour un aperçu d'utilisation, voir DateHandling_002.figure.png
+    
+Public getDayOfWeekAllchars(dt As Date, Optional strLng As String) ----------------
+		Cette fonction retourne le nom du jour de la semaine d'une date. La 
+		langue-paramètre peut être "fr" ou "en".
+    Pour un aperçu d'utilisation, voir DateHandling_002.figure.png
+ 
 ================================================================================
 "RangeDetection.excelMacro.bas":
 -------------------------------
