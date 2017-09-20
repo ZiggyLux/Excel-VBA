@@ -19,6 +19,9 @@ LISTE DES MODULES  ET DES COMPOSANTS
 "ErrorHandling.excelMacro.bas" -------------------------------------------------
   Ce module fournit les outils à la bonne gestion des erreurs sous Excel
 
+"ExtractJoint.excelMacro.bas" --------------------------------------------------
+  Ce modèle montre comment extraire les données d'une table avec jointure
+
 "TypeCellule.excelMacro.bas" ---------------------------------------------------
 	Ce module illustre comment détecter le type d'une cellule
 	
@@ -107,6 +110,21 @@ Public getDayOfWeekAllchars(dt As Date, Optional strLng As String) -------------
     Pour un aperçu d'utilisation, voir DateHandling_002.figure.png
  
 ================================================================================
+"ErrorHandling.excelMacro.bas":
+-------------------------------
+
+Public returnExcelError(str As String) as Variant ------------------------------
+    Cette fonction montre comment retourner une erreur Excel dans un Variant
+    Pour un aperçu d'utilisation, voir ErrorHandling_001.figure.png
+================================================================================
+"ExtractJoin.excelMacro.bas":
+-------------------------------
+
+Public ExtractJoin() --------------------------------------------------------
+    Cette procédure est un modèle pour extraire les données d'une feuille de
+    calcul vers une autre feuille avec jointure sur une autre table.
+    Pour un aperçu d'utilisation, voir ExtractJoin_001.figure.png
+================================================================================
 "RangeDetection.excelMacro.bas":
 -------------------------------
 
@@ -135,12 +153,5 @@ Public Sub DetectRangeActiveCell_SE() ------------------------------------------
  		Sud-Est.
   	Pour un aperçu d'utilisation, voir RangeDetection_001.figure.png
 
-================================================================================
-"ErrorHandling.excelMacro.bas":
--------------------------------
-
-Public returnExcelError(str As String) as Variant ------------------------------
-    Cette fonction montre comment retourner une erreur Excel dans un Variant
-    Pour un aperçu d'utilisation, voir ErrorHandling_001.figure.png
 ================================================================================
 Fin
