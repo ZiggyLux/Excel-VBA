@@ -1,0 +1,33 @@
+﻿DOCUMENTATION DE LA LIBRAIRIE EXCEL VBA
+Package : ETL
+
+================================================================================
+LISTE DES MODULES ET DES COMPOSANTS
+
+"doc/Excel VBA.ETL.doc.utf-8.txt"
+	Ce document
+
+"util.excelMacro.bas" ----------------------------------------------------------
+	Ce module fournit des fonctions utiles pour les traitements de type ETL	
+
+================================================================================
+"util.excelMacro.bas":
+-------------------------------
+
+Function ImplodeRangeToString(List, sep As String, quote As String) As String --
+    Convertit une liste de valeur en texte délimité par séparateur avec quote
+		Pour un aperçu d'utilisation, voir Util_001.figure.png
+		
+Function ImplodeRangeToFile(List,
+    strOutputFilePath As String, _
+    strSeparator As String, _
+    strQuote As String, _
+    nIndent As Integer, _
+    nParagraphWidth As Integer _
+) As Boolean -------------------------------------------------------------------
+		Convertit une liste de valeur en texte délimité par séparateur avec quote
+		dans un fichier.
+		Pour un aperçu d'utilisation, voir Util_002.figure.png
+
+================================================================================
+Fin
