@@ -29,6 +29,9 @@ LISTE DES MODULES  ET DES COMPOSANTS
 	Ce module permet la détermination de 'zone englobante' à partir d'une cellule
 	d'origine
 	
+"SheetUtil.excelMacro.bas" -----------------------------------------------------
+	Ce module fournit quelques outils pour gérer les feuilles et les classeurs
+	
 ================================================================================
 "Common.excelMacro.bas":
 ------------------------
@@ -153,5 +156,13 @@ Public Sub DetectRangeActiveCell_SE() ------------------------------------------
  		Sud-Est.
   	Pour un aperçu d'utilisation, voir RangeDetection_001.figure.png
 
+================================================================================
+"SheetUtil.excelMacro.bas":
+---------------------------
+
+Public Function getSheetTypeByName(strFeuille As String, wb As Workbook) 
+  As String
+  	Cette procédure retourne le type de feuille d'un classeur
+  	Pour un aperçu d'utilisation, voir SheetUtil_001.figure.png
 ================================================================================
 Fin
