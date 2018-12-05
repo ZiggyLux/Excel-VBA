@@ -29,6 +29,10 @@ LISTE DES MODULES  ET DES COMPOSANTS
 	Ce module permet la détermination de 'zone englobante' à partir d'une cellule
 	d'origine
 	
+"RegExpUtil_par-PGM.excelMacro.bas" --------------------------------------------
+	Ce module fournit des fonctions d'enrobage pour l'usage des expressions
+	régulières en VBA. Ecrit par P.G. Matthews.
+
 "SheetUtil.excelMacro.bas" -----------------------------------------------------
 	Ce module fournit quelques outils pour gérer les feuilles et les classeurs
 	
@@ -156,6 +160,59 @@ Public Sub DetectRangeActiveCell_SE() ------------------------------------------
  		Sud-Est.
   	Pour un aperçu d'utilisation, voir RangeDetection_001.figure.png
 
+================================================================================
+"RegExpUtil_par-PGM.excelMacro.bas":
+------------------------------------
+
+Note : Un classeur de démo est disponible sous le nom suivant
+		ExpressionsRegulieres_par-PGM.xlsm
+
+Public Function RegExpFind(LookIn As String, PatternStr As String, Optional Pos,
+        Optional MatchCase As Boolean = True, Optional ReturnType As Long = 0,
+        Optional MultiLine As Boolean = False) ---------------------------------
+    Cette fonction recherche les correspondances d'une expression régulière 
+    (PatternStr) dans une chaîne donnée (LookIn).
+		La casse est prise en compte par défaut (MatchCase). Cette fonction peut 
+		retourner une correspondance si on demande une position ou indice, ou un 
+		tableau de correspondance si aucune position n’est précisée.
+		Suivant le type indiqué (ReturnType), la valeur retournée est soit la valeur 
+		de la correspondance, soit son décalage dans la chaîne, soit sa longueur.
+	  Une autre option (Multiline) permet de considérer un champ avec des retours 
+	  à la ligne comme plusieurs sous-chaînes concaténées ou comme une seule.
+
+Function RegExpFindExtended(LookIn As String, PatternStr As String, Optional Pos,
+    Optional MatchCase As Boolean = True, Optional MultiLine As Boolean = False)
+		Cette fonction est similaire à RegExpFind mais elle retourne en bloc et sous 
+		forme de tableau la valeur de la correspondance, le décalage et la longueur.
+
+Function RegExpFindSubmatch(LookIn As String, PatternStr As String, Optional MatchPos,
+    Optional SubmatchPos, Optional MatchCase As Boolean = True,
+    Optional MultiLine As Boolean = False)
+		Cette fonction recherche les occurences et sous-occurences d'une chaîne qui
+		répondent à une RegExp. Il est possible de se restreindre à une ocurrence 
+		(MatchPos) et à une sous-occurrence (SubmatchPos) de cette première.
+
+Function RegExpReplace(LookIn As String, PatternStr As String, Optional ReplaceWith As String = "",
+    Optional ReplaceAll As Boolean = True, Optional MatchCase As Boolean = True,
+    Optional MultiLine As Boolean = False)
+		Cette fonction remplace des occurrences d'une chaîne qui répondent à une 
+		RegExp par un texte. En plaçant l'option ReplaceAll à False, seule la 
+		première occurrence est remplacée.
+		
+Function RegExpReplaceRange(LookIn As String, PatternStr As String, Optional ReplaceWith As String = "",
+    Optional StartAt As Long = 1, Optional EndAt As Long = 0, Optional MatchCase As Boolean = True,
+    Optional MultiLine As Boolean = False)
+		Cette fonction remplace une plage d'occurrences d'une chaîne qui répondent à 
+		une RegExp chacune par un texte. Par défaut, toutes les occurrences sont
+		remplacées.
+		
+Function RegExpReplaceExpression(LookIn As String, PatternStr As String, Expression As String,
+    Optional StartAt As Long = 1, Optional EndAt As Long = 0,
+    Optional MatchCase As Boolean = True, Optional MultiLine As Boolean = False)
+		Cette fonction est similaire à la précédente mais les occurences sont
+		remplacées par l'évaluation d'une expression qui peut incorporer certaines
+		fonctions	intégrées d'Excel.
+	
 ================================================================================
 "SheetUtil.excelMacro.bas":
 ---------------------------
