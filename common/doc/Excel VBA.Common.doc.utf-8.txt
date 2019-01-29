@@ -221,5 +221,14 @@ Public Function getSheetTypeByName(strFeuille As String, wb As Workbook)
   As String
   	Cette procédure retourne le type de feuille d'un classeur
   	Pour un aperçu d'utilisation, voir SheetUtil_001.figure.png
+
+Public Function VerifierExistenceFeuille(strFeuille As String, fRecreer As Boolean)
+	As Boolean
+		Cette function vérifie si une feuille de calcul ayant un certain nom existe
+		dans le classeur actif. Si c'est le cas, elle demande s'il faut réinitialiser.
+		Si la feuille n'existe pas et que l'utilisateur confirme sa création, la feuille
+		est créée et la confction retourne Vrai, sinon la fonction retourne Faux.
+		Si la feuille existe sous un autre type, la fonction l'indique et retourne Faux.
+		Pour avoir un aperçu de fenêtre de confirmation, voir SheetUtil_002.figure.png.
 ================================================================================
 Fin
