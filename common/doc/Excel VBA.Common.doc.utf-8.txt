@@ -22,6 +22,9 @@ LISTE DES MODULES  ET DES COMPOSANTS
 "ExtractJoint.excelMacro.bas" --------------------------------------------------
   Ce modèle montre comment extraire les données d'une table avec jointure
 
+"FileSysUtil.excelMacro.bas" ---------------------------------------------------
+	Ce module fournit quelques fonctions générales sur le traitement des fichiers
+
 "TypeCellule.excelMacro.bas" ---------------------------------------------------
 	Ce module illustre comment détecter le type d'une cellule
 	
@@ -131,6 +134,14 @@ Public ExtractJoin() --------------------------------------------------------
     Cette procédure est un modèle pour extraire les données d'une feuille de
     calcul vers une autre feuille avec jointure sur une autre table.
     Pour un aperçu d'utilisation, voir ExtractJoin_001.figure.png
+================================================================================
+"FileSysUtil.excelMacro.bas":
+-------------------------------
+
+Public EstFichierPresent(str as String) as Boolean -----------------------------
+	Cette fonction permet d'infiquer si le fichier dont le nom de chemin est passé
+	en paramètre existe ou pas.
+
 ================================================================================
 "RangeDetection.excelMacro.bas":
 -------------------------------
