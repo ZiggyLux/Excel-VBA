@@ -7,8 +7,43 @@ LISTE DES MODULES ET DES COMPOSANTS
 "doc/Excel VBA.ETL.doc.utf-8.txt"
 	Ce document
 
+"FichierTailleFixe.excelMacro.bas" ---------------------------------------------
+	Ce module permet la lecture et l'écriture de fichier à enregistrement de 
+	taille fixe.
+
 "util.excelMacro.bas" ----------------------------------------------------------
 	Ce module fournit des fonctions utiles pour les traitements de type ETL	
+
+================================================================================
+"FichierTailleFixe.excelMacro.bas":
+-------------------------------
+
+Sub ConstruitDescEnreg( rngFieldList as Range, varrFLColNames as Variant,
+	de() as MyField) -------------------------------------------------------------
+	Sur base d'une plage décrivant les champ d'enregistrement et de la liste des
+	noms de champs reconnus, chargement d'un tableau de structure MyField. Il
+	s'agit de transformer une représentation externe d'une structure d'enregistre-
+	ment vers une structure plus appropriée pour les traitements VBA.
+	
+Sub PlacerEnteteNomsChamps(fca As Worksheet, rngFieldList As Range,
+  varrFLColNames As Variant) ---------------------------------------------------
+  Sur base d'une plage décrivant les champ d'enregistrement et de la liste des
+	noms de champs reconnus, placement des nom d'en-tête en ligne 1 de la feuille
+	de calcul indiquée.
+	Pour un aperçu de résultat, voir FileSysUtil_001.figure.png
+
+Sub LireFichierTailleFixe(fca As Worksheet, strPathname As String,
+  rngFieldList As Range, varrFLColNames As Variant) ----------------------------
+  Sur base d'une plage décrivant les champ d'enregistrement et de la liste des
+	noms de champs reconnus, chargement des données d'un fichier dans une feuille
+	de calcul passés en paramètre.    
+
+Sub EcrireFichierTailleFixe(fca As Worksheet, strPathname As String, 
+  rngFieldList As Range, varrFLColNames As Variant) ----------------------------
+  Sur base d'une plage décrivant les champ d'enregistrement et de la liste des
+	noms de champs reconnus, écriture des données d'une feuille de calcul vers un
+	fichier passés en paramètre. Cette procédure utilise un journal pour tracer
+	les erreurs et avertissements.
 
 ================================================================================
 "util.excelMacro.bas":
